@@ -20,7 +20,7 @@ LABEL maintainer="K4YT3X <i@k4yt3x.com>" \
     org.opencontainers.image.source="https://github.com/k4yt3x/simple-http-server" \
     org.opencontainers.image.description="A minimal distroless container image \
 for TheWaWaR/simple-http-server"
-COPY --from=builder --chmod=755 \
+COPY --from=builder \
     /simple-http-server/target/x86_64-unknown-linux-musl/release/simple-http-server \
     /usr/local/bin/simple-http-server
 USER nonroot:nonroot
