@@ -31,7 +31,6 @@ jobs:
           username: ${{ secrets.GHCR_USER }}
           password: ${{ secrets.GHCR_TOKEN }}
           dockerfile: Dockerfile
-          buildArgs:
-            - VERSION=${{ needs.setup.outputs.tag }}
+          buildArgs: VERSION=${{ needs.setup.outputs.tag }}
           image: simple-http-server
           tags: latest, ${{ needs.setup.outputs.tag }}
