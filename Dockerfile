@@ -24,4 +24,5 @@ COPY --from=builder \
     /simple-http-server/target/x86_64-unknown-linux-musl/release/simple-http-server \
     /usr/local/bin/simple-http-server
 USER nonroot:nonroot
+WORKDIR /var/www/html
 ENTRYPOINT ["/usr/local/bin/simple-http-server"]
